@@ -1,6 +1,6 @@
 # Gulp starter
 
-All packages are configured in packages.json
+All packages are configured in the package.json
 Run `npm install` or manually install the following modules.
 
 ## Install basic packages
