@@ -50,7 +50,7 @@ const browserSync = (done) => {
 	  done();
 }
 
-const reloadBrowerSync = (done) => {
+const reloadBroswerSync = (done) => {
 	browsersync.reload();
 	done();
 }
@@ -58,7 +58,7 @@ const reloadBrowerSync = (done) => {
 const watchFiles = () => {
 	gulp.watch("./src/sass/**/*.scss", styles);
 	gulp.watch("./src/js/**/*.js", javascript);
-	gulp.watch("./*.html", reloadBrowerSync);
+	gulp.watch("./*.html", reloadBroswerSync);
 }
 
 const compressImages = () => {
