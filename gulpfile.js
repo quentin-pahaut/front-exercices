@@ -13,19 +13,19 @@ const eslint = require('gulp-eslint');
 
 const imagemin = require("gulp-imagemin");
 
-const browserSyncServer = require("browser-sync").create();
+const browsersync = require("browser-sync").create();
 
 const styles = () => {
 	return gulp.src( './src/sass/**/*.scss')
 	.pipe(sourcemaps.init())
-	.pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+	.pipe(sass().on('error', sass.logError))
 	.pipe(postcss([
 		autoprefixer({ overrideBrowserslist: ['last 2 versions', 'ie >= 9'] }),
 		cssnano()
 	]))
 	.pipe(sourcemaps.write('./'))
 	.pipe(gulp.dest( './dist/css/'))
-	.pipe(browserSyncServer.stream());
+	.pipe(browsersync.stream());
 }
 
 const javascript = () => {
@@ -37,16 +37,22 @@ const javascript = () => {
 	  .pipe(uglify())
 	  .pipe(sourcemaps.write('./'))
 	  .pipe(gulp.dest( './dist/js/'))
-	  .pipe(browserSyncServer.stream());
+	  .pipe(browsersync.stream());
+}
+
+const html = () => {
+	return gulp.src('./*.html')
+	.pipe(browsersync.stream());
 }
 
 const watchFiles = () => {
 	gulp.watch("./src/sass/**/*.scss", styles);
 	gulp.watch("./src/js/**/*.js", javascript);
+	gulp.watch("./*.html", html);
 }
 
 const browserSync = (done) => {
-	browserSyncServer.init({
+	browsersync.init({
 		server: {
 		  baseDir: "./"
 		},
