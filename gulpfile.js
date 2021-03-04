@@ -40,17 +40,6 @@ const javascript = () => {
 	  .pipe(browsersync.stream());
 }
 
-const html = () => {
-	return gulp.src('./*.html')
-	.pipe(browsersync.stream());
-}
-
-const watchFiles = () => {
-	gulp.watch("./src/sass/**/*.scss", styles);
-	gulp.watch("./src/js/**/*.js", javascript);
-	gulp.watch("./*.html", html);
-}
-
 const browserSync = (done) => {
 	browsersync.init({
 		server: {
@@ -59,6 +48,17 @@ const browserSync = (done) => {
 		port: 3000
 	  });
 	  done();
+}
+
+const reloadBrowerSync = (done) => {
+	browsersync.reload();
+	done();
+}
+
+const watchFiles = () => {
+	gulp.watch("./src/sass/**/*.scss", styles);
+	gulp.watch("./src/js/**/*.js", javascript);
+	gulp.watch("./*.html", reloadBrowerSync);
 }
 
 const compressImages = () => {
@@ -73,7 +73,7 @@ const compressImages = () => {
 	 .pipe(gulp.dest('./dist/images/'))
 }
 
-const build = gulp.series(styles, javascript);
+const build = gulp.series(styles, javascript, compressImages);
 const watch = gulp.parallel(watchFiles, browserSync);
 const compress = gulp.series(compressImages);
 
