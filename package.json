@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "quentin-pahaut",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.2.4",
@@ -24,5 +24,13 @@
   },
   "dependencies": {
     "browser-sync": "^2.26.14"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://quentin-pahaut@github.com/TechDWM/gulp-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TechDWM/gulp-starter/issues"
+  },
+  "homepage": "https://github.com/TechDWM/gulp-starter#readme"
 }
