@@ -13,7 +13,7 @@ const eslint = require('gulp-eslint');
 
 const imagemin = require("gulp-imagemin");
 
-const browsersync = require("browser-sync").create();
+const browserSyncServer = require("browser-sync").create();
 
 const styles = () => {
 	return gulp.src( './src/sass/**/*.scss')
@@ -25,7 +25,7 @@ const styles = () => {
 	]))
 	.pipe(sourcemaps.write('./'))
 	.pipe(gulp.dest( './dist/css/'))
-	.pipe(browsersync.stream());
+	.pipe(browserSyncServer.stream());
 }
 
 const javascript = () => {
@@ -37,7 +37,7 @@ const javascript = () => {
 	  .pipe(uglify())
 	  .pipe(sourcemaps.write('./'))
 	  .pipe(gulp.dest( './dist/js/'))
-	  .pipe(browsersync.stream());
+	  .pipe(browserSyncServer.stream());
 }
 
 const watchFiles = () => {
@@ -46,7 +46,7 @@ const watchFiles = () => {
 }
 
 const browserSync = (done) => {
-	browsersync.init({
+	browserSyncServer.init({
 		server: {
 		  baseDir: "./"
 		},
