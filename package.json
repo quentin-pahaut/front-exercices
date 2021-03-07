@@ -10,6 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.2.4",
+    "css-normalize": "^0.0.1",
     "cssnano": "^4.1.10",
     "eslint": "^7.21.0",
     "gulp": "^4.0.2",
@@ -20,7 +21,8 @@
     "gulp-postcss": "^9.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^3.0.0",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "modern-normalize": "^1.0.0"
   },
   "dependencies": {
     "browser-sync": "^2.26.14"
