@@ -1,0 +1,43 @@
+
+@keyframes name {
+  0%{
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+body{
+  font-size: 16px;
+  text-align: center;
+}
+
+.container{
+position: relative;
+margin: 0 auto;
+max-width: 90vw;
+}
+
+.title{
+  position:relative;
+  animation-name: anim;
+  animation-duration:0.5s;
+
+  p :first-child{
+    position:relative;
+    animation-name: anim;
+    animation-duration:0.5s;
+    animation-delay:0.5s;
+  }
+  p :last-child{
+    position:relative;
+    animation-name: anim;
+    animation-duration:0.5s;
+    animation-delay:1s;
+  }
+}
+
+
