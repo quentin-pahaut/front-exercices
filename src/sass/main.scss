@@ -3,15 +3,14 @@
 @keyframes move {
 
   0%{
-    opacity:100%;
-    transform: translate(-300px);
+    opacity:1;
+    transform: translate(-150px);
   }
   100%{
-    transform: translate(550px);
+    opacity:1;
+    transform: translate(500px);
   }
 } 
-
-
 
 .title{
   color: red;
@@ -25,6 +24,8 @@
 
 .container__box{
   position: relative;
+  width: 900px;
+  margin:0 auto;
 }
 .box{
   width:500px;
@@ -46,7 +47,7 @@
   width:150px;
   height: 150px;
   border-radius: 100%;
-  opacity:0%;
+  opacity:0;
   background-color: black;
   position: relative;
   top: 75px;
