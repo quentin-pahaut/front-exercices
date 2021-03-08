@@ -1,9 +1,10 @@
 
-@keyframes name {
+@keyframes showtxt {
   0%{
     opacity: 0;
-    transform: translateY(-16px);
+    transform: translateY(-20px);
   }
+
   100%{
     opacity: 1;
     transform: translateY(0px);
@@ -15,29 +16,36 @@ body{
   text-align: center;
 }
 
-.container{
+.container--h1{
 position: relative;
 margin: 0 auto;
 max-width: 90vw;
+perspective: 200px;
+
+  p {
+    position: relative;
+    animation-name: showtxt;
+    animation-duration:1s;
+    animation-timing-function: ease-out;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+  }
+
+  p:last-child{
+    animation-delay: 2s;
+  }
+
 }
 
 .title{
-  position:relative;
-  animation-name: anim;
-  animation-duration:0.5s;
+  position: relative;
+  animation-name: showtxt;
+  animation-duration:1s;
+  animation-timing-function: ease-out;
 
-  p :first-child{
-    position:relative;
-    animation-name: anim;
-    animation-duration:0.5s;
-    animation-delay:0.5s;
-  }
-  p :last-child{
-    position:relative;
-    animation-name: anim;
-    animation-duration:0.5s;
-    animation-delay:1s;
-  }
+
 }
+
+
 
 
